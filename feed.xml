@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:base="https://freddy-0.github.io/">
+    <title>freddy-0 Fieldnotes</title>
+    <link href="https://freddy-0.github.io//feed.xml" rel="self" >
+    <link href="https://freddy-0.github.io/" >
+    <updated>2026-04-11T20:19:36Z</updated>
+    <id>https://freddy-0.github.io/</id>
+        <entry>
+            <title>
+                TEST
+                
+            </title>
+            <updated>2026-04-11T20:19:24Z</updated>
+            <id>https://freddy-0.github.io//</id>
+            <content type="html">
+                &lt;p&gt;TEST&lt;/p&gt;
+
+            </content>
+            <link href="https://freddy-0.github.io//" >
+        </entry>
+</feed>
