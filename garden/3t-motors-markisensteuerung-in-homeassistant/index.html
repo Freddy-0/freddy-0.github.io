@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="de">
 <head>
-<title>TEST</title>
+<title>3t Motors Markisensteuerung in Homeassistant</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <script async type="module">import mermaid from"https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"</script>
 <script async src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js" integrity="sha512-hpZ5pDCF2bRCweL5WoA0/N1elet1KYL5mx3LP555Eg/0ZguaHawxNvEjF6O3rufAChs16HVNhEc6blF/rZoowQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -73,7 +73,7 @@ CTRL + K
 <span class="foldername">Blog</span>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink active-note"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/">TEST </a>
+<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/">TEST </a>
 </div>
 </div>
 </div>
@@ -86,7 +86,7 @@ CTRL + K
 <span class="foldername">Garden</span>
 </div>
 <div x-show="isOpen" style="display:none" class="filelist">
-<div @click.stop class="notelink"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/garden/3t-motors-markisensteuerung-in-homeassistant/">3t Motors Markisensteuerung in Homeassistant </a>
+<div @click.stop class="notelink active-note"><i icon-name="sticky-note" aria-hidden="true"></i><a data-note-icon="" style="text-decoration:none" class="filename" href="/garden/3t-motors-markisensteuerung-in-homeassistant/">3t Motors Markisensteuerung in Homeassistant </a>
 </div>
 </div>
 </div>
@@ -117,13 +117,376 @@ CTRL + K
 <script>document.addEventListener("DOMContentLoaded",init,!1),document.addEventListener("DOMContentLoaded",setCorrectShortcut,!1),window.toggleSearch=function(){document.getElementById("globalsearch").classList.contains("active")?document.getElementById("globalsearch").classList.remove("active"):(document.getElementById("globalsearch").classList.add("active"),document.getElementById("term").focus())},window.toggleTagSearch=function(e){console.log(e.textContent);const t=e.textContent;t&&(window.document.getElementById("term").value=t.trim(),window.toggleSearch(),window.search())};const loadingSvg='\n    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">\n      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="1.5s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="1.5s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="1.5s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="6" stroke-opacity="0">\n              <animate attributeName="r"\n                   begin="3s" dur="3s"\n                   values="6;22"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-opacity"\n                   begin="3s" dur="3s"\n                   values="1;0" calcMode="linear"\n                   repeatCount="indefinite" />\n              <animate attributeName="stroke-width"\n                   begin="3s" dur="3s"\n                   values="2;0" calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n          <circle cx="22" cy="22" r="8">\n              <animate attributeName="r"\n                   begin="0s" dur="1.5s"\n                   values="6;1;2;3;4;5;6"\n                   calcMode="linear"\n                   repeatCount="indefinite" />\n          </circle>\n      </g>\n  </svg>';function debounce(e,t,n){var a;return function(){var r=this,i=arguments,c=n&&!a;clearTimeout(a),a=setTimeout((function(){a=null,n||e.apply(r,i)}),t),c&&e.apply(r,i)}}function setCorrectShortcut(){navigator.platform.toUpperCase().indexOf("MAC")>=0&&document.querySelectorAll(".search-keys").forEach((e=>e.innerHTML="⌘ + K"))}function createIndex(e){const t=e=>e.toLowerCase().split(/([^a-z]|[^\x00-\x7F])/),n=new FlexSearch.Document({cache:!0,charset:"latin:extra",optimize:!0,index:[{field:"content",tokenize:"reverse",encode:t},{field:"title",tokenize:"forward",encode:t},{field:"tags",tokenize:"forward",encode:t}]});return e.forEach(((e,t)=>{n.add({id:t,title:e.title,content:e.content,tags:e.tags})})),n}async function init(){let e=!0;if(localStorage.getItem("searchIndex")){let{date:t,docs:n}=JSON.parse(localStorage.getItem("searchIndex"));if("2026-04-12T17:52:48.646Z"===t){e=!1;let t=createIndex(n);window.docs=n,window.index=t}}if(e){let e=await(await fetch("/searchIndex.json?v=2026-04-12T17:52:48.646Z")).json(),t=createIndex(e);localStorage.setItem("searchIndex",JSON.stringify({date:"2026-04-12T17:52:48.646Z",docs:e})),window.docs=e,window.index=t}document.addEventListener("keydown",(e=>{if((e.ctrlKey||e.metaKey)&&"k"===e.key&&(e.preventDefault(),toggleSearch()),"Escape"===e.key&&document.getElementById("globalsearch").classList.remove("active"),document.getElementById("globalsearch").classList.contains("active")){if("ArrowDown"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.nextElementSibling?t.nextElementSibling.classList.add("active"):document.querySelector(".searchresult").classList.add("active")):document.querySelector(".searchresult").classList.add("active");let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("ArrowUp"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t?(t.classList.remove("active"),t.previousElementSibling?t.previousElementSibling.classList.add("active"):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling||e.classList.add("active")}))):document.querySelectorAll(".searchresult").forEach((e=>{e.nextElementSibling&&e.classList.add("active")}));let n=document.querySelector(".searchresult.active");n&&n.scrollIntoView({behavior:"smooth",block:"nearest",inline:"start"})}if("Enter"===e.key){e.preventDefault();let t=document.querySelector(".searchresult.active");t&&(window.location.href=t.querySelector("a").href)}}}));const t=debounce(search,200,!1);field=document.querySelector("#term"),field.addEventListener("keydown",(e=>{"ArrowDown"!==e.key&&"ArrowUp"!==e.key&&t()})),resultsDiv=document.querySelector("#search-results");const n=new URL(location.href).searchParams;n.get("q")&&(field.setAttribute("value",n.get("q")),toggleSearch(),search())}async function search(){let e=field.value.trim();if(!e)return;if(e==lastSearch)return;console.log(`search for ${e}`),window.lastSearch=e,resultsDiv.innerHTML=loadingSvg;let t=offlineSearch(e),n="";if(!t.length){let t=document.createElement("p");return t.innerText=`No results for "${e}"`,resultsDiv.innerHTML="",void resultsDiv.appendChild(t)}n+='<div style="max-width:100%;">',t.forEach((e=>{e.tags&&e.tags.length>0?n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        <div class="header-meta">\n                            <div class="header-tags">\n                                ${e.tags.map((e=>'<a class="tag" href="JavaScript:Void(0);">#'+e+"</a>")).join("")}\n                            </div>\n                        </div>\n                        ${e.content}\n                    </div>\n                </div>`:n+=`<div class="searchresult">\n                    <a class="search-link" href="${e.url}">${e.title}</a>\n                    <div onclick="window.location='${e.url}'">\n                        ${e.content}\n                    </div>\n                </div>`})),n+="</div>",resultsDiv.innerHTML=n}function truncate(e,t){return(e=e.replaceAll(/<[^>]*>/g,"")).length<t?e:e.substring(0,t-3)+"..."}function offlineSearch(e){let t=window.docs,n="#"===e[0]&&e.length>1?index.search(e.substring(1),[{field:"tags"}]):index.search(e,[{field:"title",limit:5},{field:"content",weight:10}]);const a=e=>{const t=n.filter((t=>t.field===e));return 0===t.length?[]:[...t[0].result]};return[...new Set([...a("title"),...a("content"),...a("tags")])].map((e=>{let n=t[e];return n.content=truncate(n.content,400),n.tags=n.tags.filter((e=>"gardenEntry"!=e&&"note"!=e)),n}))}window.lastSearch=""</script>
 <main class="content cm-s-obsidian">
 <header>
-<h1></h1>
+<h1 data-note-icon="">3t Motors Markisensteuerung in Homeassistant</h1>
 <div class="header-meta">
 <div class="header-tags">
 </div>
 </div>
 </header>
-<p>TEST 14 😉</p>
+<p>Ich habe in <strong>ESPHome</strong> einen RF-Transmitter eingerichtet, der mithilfe eines <strong>ESP32</strong> und eines <strong>CC1101-Transceivers</strong> die Markise auf meiner Terrasse steuert. Dafür habe ich einen <strong>RAW-Dump</strong> der übertragenen Daten aufgenommen, der direkt von einer gekoppelten Fernbedienung gesendet wurde. Den <strong>RAW-Dump</strong> habe ich unverändert in ein <code>transmit_raw</code>-Statement und einen Cover integriert.</p>
+<p>Außerdem habe ich einen Decoder für <strong>Dooya Commands</strong> integriert, der die Signale der Original-Fernbedienung empfängt und sie mit der richtigen Aktion in ESPHome verknüpft. Der ESP32 erkennt nun, wenn die Markise mit der externen Fernbedienung geschlossen wird, und passt die Öffnung in Prozent an den tatsächlichen Stand der Markise an.</p>
+<p>Problem ist, dass die Motoren in etwas das Dooya Protokol nutzen, aber beim Empfangen von Befehlen nicht das als Dooya Empfangen, was ich sende, da eine besondere Logik zum empfangen implementiert ist. Die Fernbedienung sendet Dooya Commands, wenn ich den selben Command sende, klappt es aber nicht. Die Fernbedienung nutzt zum glück statische Codes zur Kommunikation mit dem Motor.</p>
+<h2 id="idee-zur-automatisierung" tabindex="-1">Idee zur Automatisierung</h2>
+<p>Eine mögliche Automatisierung ist:</p>
+<ul>
+<li>Sonnenstandsgesteuert: Angepasste Position abhängig von den auf der Terrasse befindlichen Solarmodulen</li>
+<li>Wenn es an einem Tag über <strong>25 °C</strong> warm ist, soll die Markise ausgefahren werden, sobald die Sonne eine Elevation von mehr als <strong>20 °</strong> erreicht</li>
+</ul>
+<h2 id="bill-of-materials" tabindex="-1">Bill of Materials</h2>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>Bauteil</th>
+<th>Zweck</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ESP32</td>
+<td>Zentrale Steuerung und ESPHome-Plattform</td>
+</tr>
+<tr>
+<td>CC1101-Transceiver</td>
+<td>433,92-MHz-Funkmodul für Senden und Empfangen</td>
+</tr>
+<tr>
+<td>433-MHz-Fernbedienung</td>
+<td>Original-Fernbedienung zum Mitschneiden der Signale</td>
+</tr>
+<tr>
+<td>Markisenmotor / Markisensteuerung</td>
+<td>Zielgerät der Funksteuerung</td>
+</tr>
+<tr>
+<td>Jumper-Kabel</td>
+<td>Verbindung zwischen ESP32 und CC1101</td>
+</tr>
+<tr>
+<td>Stromversorgung</td>
+<td>Versorgung des ESP32 und des Funkmoduls</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="pinout" tabindex="-1">Pinout</h2>
+<p>Das Pinout zwischen ESP32 und CC1101 ist wie folgt:</p>
+<ol>
+<li>GND</li>
+<li>3V3</li>
+<li>D26</li>
+<li>D27</li>
+<li>D14</li>
+<li>D13</li>
+<li>D12</li>
+<li>D25</li>
+</ol>
+<p><img src="/img/user/X-Anh%C3%A4nge/Pasted%20image%2020260412194231.png" alt="Pasted image 20260412194231.png704" width="704px"><br>
+<a href="https://zaitronics.com.au/blogs/guides/cc1101-guide-instruction-manual" target="_blank" class="external-link">Bildquelle</a></p>
+<h2 id="allgemeines-konzept" tabindex="-1">Allgemeines Konzept</h2>
+<p>Das Projekt basiert auf einem einfachen, aber effektiven Prinzip:</p>
+<ul>
+<li>Die Original-Fernbedienung sendet ein Dooya-Funksignal.</li>
+<li>Der CC1101 empfängt dieses Signal über den ESP32.</li>
+<li>ESPHome interpretiert die empfangenen Dooya-Kommandos.</li>
+<li>Derselbe ESP32 kann zusätzlich die aufgezeichneten RAW-Signale wieder aussenden.</li>
+<li>Dadurch lassen sich die Funktionen <strong>Auf</strong>, <strong>Zu</strong> und <strong>Stopp</strong> zuverlässig nachbilden.</li>
+<li>Über einen <code>time_based</code>-Cover wird die Position der Markise logisch nachgeführt.</li>
+</ul>
+<p>Der Vorteil dieses Ansatzes liegt darin, dass keine direkte Änderung an der eigentlichen Markisensteuerung nötig ist. Stattdessen wird die vorhandene Funktechnik genutzt und mit Home Assistant bzw. ESPHome intelligent erweitert.</p>
+<p><img src="/img/user/X-Anh%C3%A4nge/Pasted%20image%2020260412194351.png" alt="Pasted image 20260412194351.png654" width="654px"><br>
+<a href="https://www.3t-motors.de/3T-Motors-Rollladenmotore" target="_blank" class="external-link">Bildquelle</a></p>
+<h2 id="technische-umsetzung" tabindex="-1">Technische Umsetzung</h2>
+<p>Die Konfiguration in ESPHome besteht aus drei Hauptteilen:</p>
+<ul>
+<li><strong>Senden der RAW-Codes</strong></li>
+<li><strong>Empfangen und Dekodieren der Dooya-Kommandos</strong></li>
+<li><strong>Zeitbasierte Positionsverwaltung</strong></li>
+</ul>
+<h3 id="1-rf-senden-per-raw-dump" tabindex="-1">1. RF-Senden per RAW-Dump</h3>
+<p>Für die Steuerung wurden die Funktelegramme der Original-Fernbedienung per RAW-Dump aufgezeichnet. Diese Sequenzen wurden direkt in <code>remote_transmitter.transmit_raw</code> übernommen. Dadurch sendet ESPHome exakt die gleichen Signale wie die originale Fernbedienung.</p>
+<p>Dazu wurden drei interne Buttons angelegt:</p>
+<ul>
+<li><code>shutter_up_btn</code></li>
+<li><code>shutter_down_btn</code></li>
+<li><code>shutter_stop_btn</code></li>
+</ul>
+<p>Diese Buttons sind intern und werden vom Cover aufgerufen.</p>
+<h3 id="2-zeitbasierter-cover" tabindex="-1">2. Zeitbasierter Cover</h3>
+<p>Der eigentliche Cover-Eintrag nutzt <code>platform: time_based</code>. Damit wird die Position der Markise anhand der bekannten Laufzeit berechnet.</p>
+<ul>
+<li><code>open_duration</code> definiert die Zeit für das vollständige Öffnen</li>
+<li><code>close_duration</code> definiert die Zeit für das vollständige Schließen</li>
+<li><code>assumed_state: true</code> erlaubt die Steuerung unabhängig vom exakten Ist-Zustand</li>
+</ul>
+<p>Das ist besonders praktisch, wenn die Markise auch per Fernbedienung bewegt wird, da ESPHome dadurch den Positionsstatus logisch nachführen kann.</p>
+<h3 id="3-empfang-von-dooya-kommandos" tabindex="-1">3. Empfang von Dooya-Kommandos</h3>
+<p>Der <code>remote_receiver</code> hört auf 433,92 MHz und dekodiert Dooya-Signale. Über drei <code>binary_sensor</code>-Einträge werden die Kommandos den jeweiligen Aktionen zugeordnet:</p>
+<ul>
+<li>Öffnen</li>
+<li>Schließen</li>
+<li>Stopp</li>
+</ul>
+<p>Wenn also die Original-Fernbedienung benutzt wird, kann ESPHome das erkennen und den Cover-Status passend aktualisieren.</p>
+<h2 id="technische-notizen" tabindex="-1">Technische Notizen</h2>
+<ul>
+<li>Der CC1101 arbeitet hier im <strong>ASK/OOK-Modus</strong>.</li>
+<li>Der Receiver ist auf <strong>Dooya</strong> konfiguriert.</li>
+<li>Die Toleranz wurde bewusst großzügig gewählt, um die Erkennung robuster zu machen.</li>
+<li>Die RAW-Sequenzen wurden unverändert übernommen, damit die Originalsignale möglichst exakt reproduziert werden.</li>
+</ul>
+<h2 id="ergebnis" tabindex="-1">Ergebnis</h2>
+<p>Mit dieser Lösung lässt sich die Markise sowohl über Home Assistant als auch über die Original-Fernbedienung bedienen. Gleichzeitig bleibt der Positionsstatus der Markise in ESPHome weitgehend synchron. Das macht das System robust, alltagstauglich und erweiterbar für spätere Automatisierungen, etwa basierend auf Temperatur oder Sonnenstand.</p>
+<h2 id="esp-home-konfiguration" tabindex="-1">ESPHome-Konfiguration</h2>
+<pre><code class="language-yaml">esphome:
+  name: markisensteuerung
+  friendly_name: Balkon-Markise
+
+esp32:
+  board: esp32dev
+  framework:
+    type: arduino
+
+substitutions:
+  # Duration for a full open/close cycle. Adjust these values to match the
+  # amount of time your 3T shutter takes to fully open or close.  The
+  # time_based cover below uses these variables to calculate the position.
+  open_duration: &quot;60s&quot;
+  close_duration: &quot;60s&quot;
+
+# Enable logging
+logger:
+
+api:
+  encryption:
+    key: &quot;redacted&quot;
+
+ota:
+  - platform: esphome
+    password: &quot;redacted&quot;
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+# SPI bus for CC1101
+spi:
+  clk_pin: GPIO14
+  miso_pin: GPIO12
+  mosi_pin: GPIO13
+
+# CC1101 radio
+cc1101:
+  cs_pin: GPIO27
+  frequency: 433.92MHz
+  modulation_type: ASK/OOK
+
+# CC1101 dual-pin mode
+remote_transmitter:
+  pin: GPIO26        # CC1101 GDO0
+  carrier_duty_percent: 100%
+  on_transmit:
+    then:
+      - cc1101.begin_tx
+  on_complete:
+    then:
+      - cc1101.begin_rx
+
+
+## Internal buttons that send the raw pulse sequences captured from the
+# original remote.  Marking these buttons as `internal: true` hides them
+# from Home Assistant.  The cover below calls these buttons to perform
+# open/close/stop actions.
+button:
+  - platform: template
+    id: shutter_down_btn
+    name: &quot;Shutter DOWN&quot;
+    internal: true
+    on_press:
+      - remote_transmitter.transmit_raw:
+          code: [
+              4803, -1521, 340, -741, 337, -717, 343, -745, 316, -744, 698, -384,
+              693, -368, 692, -368, 333, -760, 315, -747, 330, -741, 333, -733,
+              340, -747, 705, -350, 714, -365, 712, -365, 326, -739, 707, -372,
+              689, -388, 334, -741, 328, -737, 690, -368, 334, -740, 709, -369,
+              314, -754, 338, -740, 687, -385, 321, -743, 714, -364, 336, -722,
+              349, -717, 338, -752, 692, -389, 325, -739, 338, -728, 692, -366,
+              700, -378, 341, -724, 337, -744, 695, -368, 692, -419, 4749, -1523,
+              349, -719, 340, -724, 344, -745, 345, -718, 715, -365, 693, -366,
+              698, -368, 344, -744, 326, -740, 340, -725, 342, -744, 326, -741,
+              691, -369, 714, -348, 721, -366, 340, -723, 727, -369, 693, -367,
+              327, -742, 341, -724, 717, -341, 356, -738, 690, -364, 358, -716,
+              355, -735, 689, -370, 363, -715, 699, -366, 340, -747, 327, -741,
+              338, -729, 691, -392, 328, -741, 338, -724, 713, -366, 702, -351,
+              339, -750, 318, -738, 696, -379, 715, -7721, 4783, -1514, 345, -717,
+              342, -719, 358, -725, 349, -716, 723, -364, 690, -368, 727, -344,
+              345, -743, 326, -742, 339, -722, 358, -712, 345, -737, 691, -367,
+              724, -344, 720, -340, 356, -738, 714, -346, 715, -371, 337, -734,
+              339, -723, 727, -352, 341, -721, 720, -364, 345, -717, 342, -721,
+              734, -343, 349, -717, 713, -366, 339, -733, 357, -713, 334, -743,
+              714, -364, 338, -715, 359, -720, 716, -369, 692, -369, 334, -744,
+              338, -734, 693, -364, 720, -364, 4789, -1516, 337, -731, 340, -724,
+              349, -742, 338, -728, 716, -343, 728, -343, 720, -341, 355, -738,
+              338, -734, 343, -717, 335, -746, 345, -717, 716, -339, 717, -367,
+              702, -369, 345, -742, 699, -357, 716, -371, 343, -716, 356, -712,
+              714, -371, 332, -741, 711, -341, 362, -722, 359, -714, 708, -371,
+              339, -722, 710, -349, 363, -727, 340, -723, 348, -717, 716, -365,
+              339, -724, 350, -740, 711, -341, 711, -366, 358, -714, 357, -712,
+              713, -370, 708, -400, 4777, -1501, 341, -746, 344, -720, 327, -741,
+              341, -722, 717, -366, 700, -358, 716, -371, 341, -716, 356, -714,
+              364, -722, 330, -736, 335, -732, 716, -344, 729, -350, 716, -362,
+              334, -735, 709, -347, 722, -366, 338, -731, 359, -713, 704, -375,
+              340, -725, 718, -340, 356, -740, 340, -726, 718, -340, 358, -712
+            ]
+
+  - platform: template
+    id: shutter_stop_btn
+    name: &quot;Shutter STOP&quot;
+    internal: true
+    on_press:
+      - remote_transmitter.transmit_raw:
+          code: [
+              4782, -1546, 313, -769, 314, -741, 321, -746, 338, -745, 686, -364,
+              700, -394, 693, -366, 328, -737, 341, -721, 342, -742, 335, -745,
+              318, -744, 692, -362, 710, -366, 700, -395, 318, -744, 698, -359,
+              718, -360, 338, -744, 327, -740, 689, -369, 336, -741, 709, -370,
+              314, -747, 359, -715, 707, -371, 339, -722, 710, -348, 362, -729,
+              340, -723, 346, -735, 684, -376, 342, -746, 692, -366, 349, -718,
+              717, -370, 339, -715, 707, -373, 340, -721, 710, -372, 4786, -1521,
+              340, -725, 340, -740, 335, -719, 342, -721, 716, -364, 710, -365,
+              696, -370, 344, -743, 326, -738, 338, -736, 343, -723, 325, -741,
+              718, -343, 715, -371, 712, -342, 339, -748, 708, -348, 713, -367,
+              339, -747, 328, -741, 688, -367, 339, -732, 710, -348, 362, -730,
+              340, -722, 727, -369, 317, -742, 700, -357, 343, -747, 342, -720,
+              325, -741, 716, -371, 338, -714, 705, -374, 341, -724, 718, -341,
+              355, -738, 689, -364, 360, -715, 709, -382, 4780, -1517, 336, -730,
+              340, -723, 349, -716, 363, -728, 692, -366, 699, -380, 690, -364,
+              346, -745, 346, -717, 341, -723, 346, -744, 318, -744, 690, -363,
+              712, -367, 699, -384, 335, -738, 689, -370, 713, -372, 339, -728,
+              341, -723, 697, -369, 344, -745, 702, -352, 341, -748, 341, -717,
+              709, -364, 347, -716, 715, -366, 340, -723, 348, -716, 340, -748,
+              686, -393, 328, -741, 685, -366, 336, -746, 707, -348, 363, -728,
+              691, -367, 351, -717, 715
+            ]
+
+  - platform: template
+    id: shutter_up_btn
+    name: &quot;Shutter UP&quot;
+    internal: true
+    on_press:
+      - remote_transmitter.transmit_raw:
+          code: [
+              4788, -1546, 313, -746, 326, -740, 342, -725, 340, -744, 700, -354,
+              718, -370, 691, -371, 336, -730, 340, -747, 328, -741, 335, -730,
+              341, -723, 700, -395, 694, -367, 702, -355, 343, -747, 696, -366,
+              698, -384, 319, -745, 340, -720, 720, -362, 321, -744, 691, -390,
+              319, -745, 348, -743, 688, -365, 337, -734, 693, -368, 342, -742,
+              341, -724, 349, -717, 714, -365, 340, -734, 340, -743, 327, -739,
+              690, -369, 335, -740, 335, -738, 340, -722, 710, -398, 4756, -1526,
+              341, -724, 341, -741, 334, -716, 341, -735, 723, -337, 735, -343,
+              726, -358, 338, -731, 340, -723, 351, -741, 344, -707, 344, -746,
+              694, -360, 714, -366, 699, -359, 344, -745, 714, -362, 710, -343,
+              353, -716, 344, -731, 721, -363, 346, -718, 716, -338, 345, -748,
+              348, -718, 714, -365, 340, -723, 703, -368, 345, -744, 327, -739,
+              341, -721, 709, -373, 345, -709, 345, -746, 319, -744, 698, -366,
+              347, -716, 343, -746, 342, -721, 697, -410, 4771, -1516, 335, -742,
+              341, -722, 342, -741, 335, -720, 718, -358, 722, -339, 719, -366,
+              348, -716, 344, -727, 360, -723, 349, -716, 339, -747, 710, -343,
+              726, -359, 708, -353, 342, -746, 697, -366, 697, -385, 319, -743,
+              340, -719, 710, -365, 350, -715, 722, -361, 336, -748, 328, -740,
+              699, -366, 340, -723, 727, -368, 320, -745, 327, -740, 341, -721,
+              708, -359, 369, -714, 336, -733, 330, -736, 709, -355, 717, -359,
+              712, -365, 715, -366, 327, -8046, 4788, -1516, 346, -708, 344, -741,
+              345, -717, 347, -728, 721, -363, 693, -370, 697, -367, 335, -733,
+              362, -727, 338, -712, 358, -722, 341, -723, 721, -340, 732, -363,
+              695, -370, 344, -716, 725, -369, 689, -371, 363, -714, 345, -713,
+              718, -367, 349, -716, 724, -338, 345, -746, 346, -716, 727, -338,
+              345, -740, 695, -370, 345, -716, 355, -714, 364, -722, 709, -370,
+              343, -717, 347, -722, 344, -743, 699, -365, 724, -336, 719, -372,
+              693, -370, 346, -8031, 4772, -1545, 312, -742, 343, -747, 315, -746,
+              325, -740, 692, -394, 687, -372, 698, -367, 342, -746, 326, -741,
+              343, -732, 319, -744, 348, -718, 714, -365, 692, -366, 701, -395,
+              318, -745, 697, -373, 690, -369, 337, -741, 333, -731, 716, -368,
+              331, -742, 687, -366, 340, -734, 360, -714, 709, -380, 318, -743
+            ]
+
+## Time-based cover.  Uses the internal buttons defined above for
+# the actions and keeps track of the shutter position based on the
+# configured open and close durations.  The durations are defined in
+# the substitutions section.  Assumed state is enabled to allow
+# controlling the cover regardless of its current state.
+cover:
+  - platform: time_based
+    name: &quot;Balkon Markise&quot;
+    id: shutter
+    device_class: shutter
+    open_action:
+      - button.press: shutter_up_btn
+    open_duration: ${open_duration}
+    close_action:
+      - button.press: shutter_down_btn
+    close_duration: ${close_duration}
+    stop_action:
+      - button.press: shutter_stop_btn
+    assumed_state: true
+
+# Remote receiver to listen for Dooya RF remote codes.  When a code
+# matching your remote is received, binary sensors below will call
+# the appropriate cover action to keep the position and state in sync.
+remote_receiver:
+  pin: GPIO25
+  dump:
+    - dooya
+  # Adjust tolerance and filter settings to improve decoding reliability.
+  tolerance:
+    # Allow ±50% variation in timings
+    type: percentage
+    value: 50%
+  filter: 250us
+  idle: 7ms
+  buffer_size: 10kB
+
+binary_sensor:
+  # Closing command from original remote
+  - platform: remote_receiver
+    internal: true
+    id: reciever_close
+    dooya:
+      id: 0x000E0ECA
+      channel: 81
+      button: 3
+      check: 3
+    filters:
+      - delayed_off: 100ms
+    on_press:
+      - cover.close: shutter
+
+  # Stop command from original remote
+  - platform: remote_receiver
+    internal: true
+    id: reciever_stop
+    dooya:
+      id: 0x000E0ECA
+      channel: 81
+      button: 5
+      check: 5
+    filters:
+      - delayed_off: 100ms
+    on_press:
+      - cover.stop: shutter
+
+  # Opening command from original remote
+  - platform: remote_receiver
+    internal: true
+    id: reciever_open
+    dooya:
+      id: 0x000E0ECA
+      channel: 81
+      button: 1
+      check: 1
+    filters:
+      - delayed_off: 100ms
+    on_press:
+      - cover.open: shutter
+</code></pre>
 </main>
 <aside>
 <div class="sidebar">
@@ -156,6 +519,43 @@ CTRL + K
 <span id="full-graph-close" x-on:click="fullGraph = closefullGraph(fullGraph); showFullGraph = false;"><i icon-name="x" aria-hidden="true"></i></span><div id="full-graph-container"></div>
 </div>
 </div>
+<div class="toc">
+<div class="toc-title-container">
+<div class="toc-title">
+On this page
+</div>
+</div>
+<div class="toc-container">
+<nav class="toc">
+<ol>
+<li><a href="#idee-zur-automatisierung">Idee zur Automatisierung</a>
+</li>
+<li><a href="#bill-of-materials">Bill of Materials</a>
+</li>
+<li><a href="#pinout">Pinout</a>
+</li>
+<li><a href="#allgemeines-konzept">Allgemeines Konzept</a>
+</li>
+<li><a href="#technische-umsetzung">Technische Umsetzung</a>
+<ol>
+<li><a href="#1-rf-senden-per-raw-dump">1. RF-Senden per RAW-Dump</a>
+</li>
+<li><a href="#2-zeitbasierter-cover">2. Zeitbasierter Cover</a>
+</li>
+<li><a href="#3-empfang-von-dooya-kommandos">3. Empfang von Dooya-Kommandos</a>
+</li>
+</ol>
+</li>
+<li><a href="#technische-notizen">Technische Notizen</a>
+</li>
+<li><a href="#ergebnis">Ergebnis</a>
+</li>
+<li><a href="#esp-home-konfiguration">ESPHome-Konfiguration</a>
+</li>
+</ol>
+</nav>
+</div>
+</div>
 <div class="backlinks">
 <div class="backlink-title" style="margin:4px 0!important">Pages mentioning this page</div>
 <div class="backlink-list"><div class="backlink-card">
@@ -173,6 +573,9 @@ CTRL + K
 <iframe style="display:none;height:0;width:0" id="link-preview-iframe" src="">
 </iframe>
 <script>var opacityTimeout,contentTimeout,transitionDurationMs=100,iframe=document.getElementById("link-preview-iframe"),tooltipWrapper=document.getElementById("tooltip-wrapper"),tooltipContent=document.getElementById("tooltip-content"),linkHistories={};function hideTooltip(){opacityTimeout=setTimeout((function(){tooltipWrapper.style.opacity=0,contentTimeout=setTimeout((function(){tooltipContent.innerHTML="",tooltipWrapper.style.display="none"}),transitionDurationMs+1)}),transitionDurationMs)}function showTooltip(t){var e=t.target,o=e.getClientRects()[e.getClientRects().length-1],i=window.pageYOffset||document.documentElement.scrollTop,n=t.target.getAttribute("href");if(-1===n.indexOf("http")||-1!==n.indexOf(window.location.host)){let t=n.split("#")[0];linkHistories[t]?(tooltipContent.innerHTML=linkHistories[t],tooltipWrapper.style.display="block",setTimeout((function(){if(tooltipWrapper.style.opacity=1,-1!=n.indexOf("#")){let t=n.split("#")[1];const e=tooltipWrapper.querySelector(`[id='${t}']`);e.classList.add("referred"),e.scrollIntoView({behavior:"smooth"},!0)}else tooltipWrapper.scroll(0,0)}),1)):(iframe.src=t,iframe.onload=function(){tooltipContentHtml="",tooltipContentHtml+='<div style="font-weight: bold; unicode-bidi: plaintext;">'+iframe.contentWindow.document.querySelector("h1").innerHTML+"</div>",tooltipContentHtml+=iframe.contentWindow.document.querySelector(".content").innerHTML,tooltipContent.innerHTML=tooltipContentHtml,linkHistories[t]=tooltipContentHtml,tooltipWrapper.style.display="block",tooltipWrapper.scrollTop=0,setTimeout((function(){if(tooltipWrapper.style.opacity=1,-1!=n.indexOf("#")){let t=n.split("#")[1];const e=tooltipWrapper.querySelector(`[id='${t}']`);e.classList.add("referred"),console.log(e),e.scrollIntoView({behavior:"smooth"},!0)}else tooltipWrapper.scroll(0,0)}),1)}),tooltipWrapper.style.left=o.left-tooltipWrapper.offsetWidth/2+o.width/2+"px",window.innerHeight-o.top<tooltipWrapper.offsetHeight?tooltipWrapper.style.top=o.top+i-tooltipWrapper.offsetHeight-10+"px":window.innerHeight-o.top>tooltipWrapper.offsetHeight&&(tooltipWrapper.style.top=o.top+i+35+"px"),o.left+o.width/2<tooltipWrapper.offsetWidth/2?tooltipWrapper.style.left="10px":document.body.clientWidth-o.left-o.width/2<tooltipWrapper.offsetWidth/2&&(tooltipWrapper.style.left=document.body.clientWidth-tooltipWrapper.offsetWidth-20+"px")}}function setupListeners(t){t.addEventListener("mouseleave",(function(t){hideTooltip()})),tooltipWrapper.addEventListener("mouseleave",(function(t){hideTooltip()})),t.addEventListener("mouseenter",(function(t){clearTimeout(opacityTimeout),clearTimeout(contentTimeout),showTooltip(t)})),tooltipWrapper.addEventListener("mouseenter",(function(t){clearTimeout(opacityTimeout),clearTimeout(contentTimeout)}))}window.addEventListener("load",(function(t){document.querySelectorAll(".internal-link").forEach(setupListeners),document.querySelectorAll(".backlink-card a").forEach(setupListeners)}))</script>
+<script>window.location.hash&&document.getElementById(window.location.hash.slice(1)).classList.add("referred"),window.addEventListener("hashchange",(e=>{const t=e.oldURL.split("#");t[1]&&document.getElementById(t[1]).classList.remove("referred");const n=e.newURL.split("#");n[1]&&document.getElementById(n[1]).classList.add("referred")}),!1);const url_parts=window.location.href.split("#"),url=url_parts[0],referrence=url_parts[1];document.querySelectorAll(".cm-s-obsidian > *[id]").forEach((function(e){e.ondblclick=function(e){const t=url+"#"+e.target.id;navigator.clipboard.writeText(t)}}))</script>
+<script src="https://fastly.jsdelivr.net/npm/luxon@3.2.1/build/global/luxon.min.js"></script>
+<script defer="defer">TIMESTAMP_FORMAT="MMM dd, yyyy h:mm a",document.querySelectorAll(".human-date").forEach((function(e){date=e.getAttribute("data-date")||e.innerText,parsed_date=luxon.DateTime.fromISO(date),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromSQL(date)),null!=parsed_date.invalid&&(parsed_date=luxon.DateTime.fromHTML(date)),e.innerHTML=parsed_date.toFormat(TIMESTAMP_FORMAT)}))</script>
 <script>lucide.createIcons({attrs:{class:["svg-icon"]}})</script>
 </body>
 </html>
