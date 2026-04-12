@@ -3,14 +3,14 @@
     <title>freddy-0 Fieldnotes</title>
     <link href="https://freddy-0.github.io//feed.xml" rel="self" >
     <link href="https://freddy-0.github.io/" >
-    <updated>2026-04-12T17:52:48Z</updated>
+    <updated>2026-04-12T17:53:04Z</updated>
     <id>https://freddy-0.github.io/</id>
         <entry>
             <title>
                 3t Motors Markisensteuerung in Homeassistant
                 
             </title>
-            <updated>2026-04-12T17:52:41Z</updated>
+            <updated>2026-04-12T17:52:58Z</updated>
             <id>https://freddy-0.github.io//garden/3t-motors-markisensteuerung-in-homeassistant/</id>
             <content type="html">
                 &lt;p&gt;Ich habe in &lt;strong&gt;ESPHome&lt;/strong&gt; einen RF-Transmitter eingerichtet, der mithilfe eines &lt;strong&gt;ESP32&lt;/strong&gt; und eines &lt;strong&gt;CC1101-Transceivers&lt;/strong&gt; die Markise auf meiner Terrasse steuert. Dafür habe ich einen &lt;strong&gt;RAW-Dump&lt;/strong&gt; der übertragenen Daten aufgenommen, der direkt von einer gekoppelten Fernbedienung gesendet wurde. Den &lt;strong&gt;RAW-Dump&lt;/strong&gt; habe ich unverändert in ein &lt;code&gt;transmit_raw&lt;/code&gt;-Statement und einen Cover integriert.&lt;/p&gt;
@@ -386,7 +386,7 @@ binary_sensor:
                 TEST
                 
             </title>
-            <updated>2026-04-12T17:52:41Z</updated>
+            <updated>2026-04-12T17:52:58Z</updated>
             <id>https://freddy-0.github.io//</id>
             <content type="html">
                 &lt;p&gt;TEST 14 😉&lt;/p&gt;
