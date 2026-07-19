@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/garden/3t-motors-markisensteuerung-in-homeassistant/","dg-note-properties":{}}
+{"dg-publish":true,"permalink":"/garden/3t-motors-markisensteuerung-in-homeassistant/","tags":["gardenEntry"],"dg-note-properties":{}}
 ---
 
 Ich habe in **ESPHome** einen RF-Transmitter eingerichtet, der mithilfe eines **ESP32** und eines **CC1101-Transceivers** die Markise auf meiner Terrasse steuert. Dafür habe ich einen **RAW-Dump** der übertragenen Daten aufgenommen, der direkt von einer gekoppelten Fernbedienung gesendet wurde. Den **RAW-Dump** habe ich unverändert in ein `transmit_raw`-Statement und einen Cover integriert.
